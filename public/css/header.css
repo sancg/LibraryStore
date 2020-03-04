@@ -1,0 +1,162 @@
+:root {
+  font-size: medium;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #232323;
+  --bg-secondary: #141418;
+  --transition-speed: 400ms;
+}
+
+body{
+  color: black;
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-slider-thumb {
+  background: #6649b8;
+}
+
+main {
+  margin-left: 4.5rem;
+  padding: 1rem;
+}
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 200ms ease;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*height: 100%; if we want to send our last item to the bottom of the column*/
+} 
+
+
+.navbar-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 4.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.8);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.nav-link i {
+  min-width: 0rem;
+  margin: 0 1.6rem;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.navbar:hover {
+  width: 15rem;
+}
+
+.navbar:hover .link-text {
+  display: block;
+}
+
+.icon {
+  color: #6649b8;
+  transition: var(--transition-speed);
+}
+
+.logo {
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.logo i {
+  transform: rotate(0deg);
+  transition: transform var(--transition-speed);
+}
+
+.navbar:hover .logo i {
+  transform: rotate(-360deg);
+}
+
+/* Small Screens*/
+@media only screen and (max-width: 600px){
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 4.5rem;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+
+  .navbar:hover .link-text {
+    display: none;
+  }
+
+  .navbar:hover {
+    width: 100%;
+  }
+}
+
+/* Large Screens*/
+@media only screen and (min-width: 600px){
+  .navbar {
+    top: 0;
+    width: 4.5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 15rem;
+  }
+
+  .navbar:hover .link-text{
+    display: inline;
+    transition: opacity var(--transition-speed);
+  }
+}

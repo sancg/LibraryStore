@@ -1,0 +1,8 @@
+<main>
+  <h2>New Author</h2>
+<%- include('_form_fields') %>  <!-- In our route we defined a POST, so in the form it must be a post method-->
+  <form action="/authors" method="POST">
+    <a href="/authors">Cancel</a>
+    <button type="submit">Create</button>
+  </form>
+</main>
