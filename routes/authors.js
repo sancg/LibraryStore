@@ -14,8 +14,24 @@ router.get('/new',(req, res) =>{
 })
 
 // Create Author route 
-router.post('/', (req, res) => {
-  res.send(req.body.name) //We  actually are creating the new route
+router.post('/', async (req, res) => {
+  const author = new Author({
+    name: req.body.name
+  })
+  try{
+
+    const newAuthor =  await author.save()
+    //res.redirect('authors/${newAuthor.id}')
+    res.redirect('authors')
+    console.log(author)
+  } catch{
+    res.render('authors/newAuthor',{
+      author: author,
+      errorMessage: "Error creating author"
+    })
+    console.log(author)
+  }
+  
 })
 //To get de information that is needed from the client we need a library call body parser
 module.exports = router

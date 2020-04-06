@@ -12,6 +12,7 @@ const indexRouter = require('./routes/index') //relative path ./
 const authorRouter = require('./routes/authors')
 
 
+//Middle wares
 app.set('view engine','ejs')
 app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')

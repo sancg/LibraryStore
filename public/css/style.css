@@ -1,0 +1,12 @@
+.err{
+  margin-left: 4.5rem;
+  padding: 1rem 2rem;
+  color: rgb(238, 32, 32);
+}
+
+/* Small Screens*/
+@media only screen and (max-width: 600px){
+  .err{
+    margin: 0;
+  }
+}
