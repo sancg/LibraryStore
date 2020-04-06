@@ -29,11 +29,12 @@ body::-webkit-slider-thumb {
 
 main {
   margin-left: 4.5rem;
-  padding: 1rem;
+  padding-left: 2rem;
 }
 
 .navbar {
   position: fixed;
+  margin-right: 100px;
   background-color: var(--bg-primary);
   transition: width 200ms ease;
 }
